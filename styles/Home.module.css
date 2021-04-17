@@ -3,3 +3,9 @@
   min-height: 100vh;
   color: #fff;
 }
+
+.main__inner {
+  max-width: 1260px;
+  margin: auto;
+  padding: 30px 15px;
+}
