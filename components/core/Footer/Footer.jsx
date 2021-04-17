@@ -1,10 +1,11 @@
 import React from 'react';
+import Text from '../Text/Text.jsx'
 import Wrapper from './Styled';
 
 const Footer = () => {
     return(
         <Wrapper>
-            <p>All rights reserved. 2021</p>
+            <Text as="p">All rights reserved. 2021</Text>
         </Wrapper>
     )
 }
