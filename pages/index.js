@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import useSwr from 'swr'
-import Link from 'next/link'
-import Text from '../components/core/Text/Text'
 import Header from '../components/core/Header/Header'
 import Footer from '../components/core/Footer/Footer'
+import UploadForm from '../components/core/Form/Form'
+import VideoList from '../components/core/VideoList/VideoList'
+import Player from '../components/core/Player/Player'
 import styles from '../styles/Home.module.css'
 
 const fetcher = (url) => fetch(url).then((res) => res.json())
@@ -18,25 +19,24 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>UV Videos Library</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
         <Header/>
         <section className={styles.main__inner}>
-          <ul>
-            {data.map(({ name, id }) => (
-              <li key={id}>
-                <Link href="/video/[id]" as={`/video/${id}`}>
-                  <Text as="a">{`${name}`}</Text>
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div className={styles.main__col}>
+            <Player></Player>
+            <UploadForm formTitle="Upload your videos" placeholder="Add a video title"></UploadForm>
+          </div>
+
+          <div className={styles.main__col}>
+            <VideoList data={data}></VideoList>
+          </div>
         </section>
       </main>
-
+      
       <Footer/>
     </div>
   )
