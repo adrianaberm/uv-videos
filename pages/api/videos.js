@@ -1,5 +1,5 @@
 // Fake videos data
-const videos = [{ id: 1, name: "video" }, { id: 2, name: "video" }, { id: 3, name: "video" }]
+const videos = [{ id: 1, name: "Lorem ipsum dolor 1" }, { id: 2, name: "Lorem ipsum dolor 2" }, { id: 3, name: "Lorem ipsum dolor 3" }]
 
 export default function handler(req, res) {
   // Get data from your database

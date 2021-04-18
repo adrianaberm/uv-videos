@@ -1,11 +1,21 @@
 .main {
   background: #000;
   min-height: 100vh;
-  color: #fff;
 }
 
 .main__inner {
   max-width: 1260px;
   margin: auto;
   padding: 30px 15px;
+}
+
+@media (min-width: 1024px) {
+  .main__inner {
+    display: flex;
+    justify-content: center;
+  }
+
+  .main__col {
+    padding: 0 16px;
+  }
 }
