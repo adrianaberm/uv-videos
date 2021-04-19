@@ -1,53 +1,57 @@
-import React, { useState, useEffect } from "react";
-import Button from "../Button/Button";
+import React, { useState } from 'react';
+import Button from '../Button/Button';
+import ProgressBar from '../ProgressBar/ProgressBar';
 
 import {
     FormWrapper,
     FormTitle,
+    FormDescription,
     FileWrapper,
     FileName,
-    FileDescription,
     Message
   } from './Styled';
 
-const UploadForm = ({formTitle, placeholder}) => {
-    const [chosenFile, setChosenFile] = useState(undefined);
-    const [videoInfo, setVideoInfo] = useState([]);
-    const [message, setMessage] = useState("");
-    const [filename, setFilename] = useState("");
+const UploadForm = ({formTitle}) => {
+    const [file, setFile] = useState(null);
+    const [error, setError] = useState(null);
 
-    useEffect(() => {
-      }, []);
-
-    const selectFile = (event) => {
-        setChosenFiles(event.target.files);
-    };
-
-    const upload = () => {
-        setChosenFiles(undefined);
+    const handleChange = (e) => {
+        const file = e.target.files[0];
+    
+        if (file) {
+          const fileType = file["type"];
+          const validVideoTypes = ["video/mp4"];
+          if (validVideoTypes.includes(fileType)) {
+            setFile(file);
+            setError('');
+          } else {
+            setFile(null);
+            setError("Error please upload a valid MP4 video file");
+          }
+        }
       };
 
       return (
         <FormWrapper>
             <FormTitle as="h2">{formTitle}</FormTitle>
+            <FormDescription as="p">To upload your videos, choose a video file from your gallery and press "Upload Video".</FormDescription>
             <FileWrapper>
-                <input aria-label="File browser" name="file" type="file" onChange="" className="file__input"/>
-                <label for="file">
+                <input 
+                    aria-label="File browser" 
+                    name="file" 
+                    type="file" 
+                    onChange={handleChange}
+                    className="file__input"/>
+                <label htmlFor="file">
                     <span>Choose File</span>
                 </label>
-                <FileName>{filename ? filename : "No file choosen"}</FileName>
+                <FileName>{ file ? file.name : "No file chosen"}</FileName>
+                
             </FileWrapper>
-            <FileDescription>
-                <input type="text" onChange="" className="file__description" placeholder={placeholder}/>
-                <Button
-                    type="sumbit"
-                    onClick=""
-                    className="primary"
-                >
-                    Upload Video
-                </Button>
-            </FileDescription>
-            <Message>{message}</Message>
+            <div>
+                { file && <ProgressBar file={file} setFile={setFile} /> }
+                <Message>{error}</Message>
+            </div>
         </FormWrapper>
       );
 }
