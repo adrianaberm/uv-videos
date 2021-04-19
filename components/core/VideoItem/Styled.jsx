@@ -7,7 +7,7 @@ export const VideoWrapper = styled.div`
     cursor: pointer;
     display: flex;
     padding: 12px;
-
+    
     p {
         font-size: 12px;
         margin-left: 16px;

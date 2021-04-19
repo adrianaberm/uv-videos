@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import Text from '../Text/Text';
+import Text from '../core/Text/Text';
 
 
 export const ListWrapper = styled.div`
@@ -23,4 +23,11 @@ export const List = styled.ul`
     list-style: none;
     padding: 0;
     width: 100%;
+
+    li {
+        transition: all .3s ease;
+        &:hover {
+            background: #efefef;
+        }
+    }
 `;

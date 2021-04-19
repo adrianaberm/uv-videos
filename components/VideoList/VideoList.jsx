@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import VideoItem from '../VideoItem/VideoItem';
-import useFirestore from '../../hooks/useFirestore';
+import VideoItem from '../core/VideoItem/VideoItem';
+import useFirestore from '../hooks/useFirestore';
 
 
 import {

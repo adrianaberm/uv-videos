@@ -5,6 +5,7 @@ export const PlayerWrapper = styled.div`
     height: auto;
 
     .react-player {
+        background: #000;
         padding-top: 56.25%;
         position: relative; 
 
@@ -13,6 +14,10 @@ export const PlayerWrapper = styled.div`
             top: 0;
             left: 0;
             max-width: 100%;
+
+            &:focus {
+                outline: none;
+            }
         }
     }
 `;

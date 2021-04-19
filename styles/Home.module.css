@@ -1,6 +1,15 @@
 .main {
-  background: #000;
+  background: url(../public/assets/waves.png) no-repeat #000;
+  background-size: cover;
+  background-position: 0% 95%;
   min-height: calc(100vh - 83px);
+}
+
+.main__title {
+  color: #fff;
+  max-width: 1180px;
+  margin:  40px auto 0;
+  padding: 0 15px;
 }
 
 .main__inner {
@@ -9,7 +18,7 @@
   padding: 30px 15px;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .main__inner {
     display: flex;
     justify-content: center;
