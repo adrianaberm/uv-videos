@@ -10,7 +10,7 @@ const Player = ({
     <PlayerWrapper>
         <ReactPlayer 
             className="react-player" 
-            url={selectedVideo}
+            url={selectedVideo ? selectedVideo : "https://firebasestorage.googleapis.com/v0/b/uv-videos.appspot.com/o/2-ROSA_v3.mp4?alt=media&token=f880ff57-b3c2-400c-931b-4cf93a12de70"}
             width="100%"
             height="100%"
             type="video/mp4" 

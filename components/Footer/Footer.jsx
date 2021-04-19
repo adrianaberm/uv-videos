@@ -1,5 +1,5 @@
 import React from 'react';
-import Text from '../Text/Text.jsx'
+import Text from '../core/Text/Text.jsx'
 import Wrapper from './Styled';
 
 const Footer = () => {
