@@ -4,21 +4,23 @@ import Text from '../Text/Text';
 
 import {
   VideoWrapper,
-  Thumbnail,
+  Thumbnail
 } from './Styled';
 
 const VideoItem = ({
     id,
     isActive,
     thumbnail,
-    description
-  }) => (
-
-    <VideoWrapper isActive={isActive} id={id}>
-        <Thumbnail src={thumbnail} alt="Video thumbnail" width="80px" height="50px"></Thumbnail>
-        <Text as="p">{description}</Text>
-    </VideoWrapper>
-  );
+    description,
+  }) => {
+    
+    return (
+      <VideoWrapper isActive={isActive} id={id}>
+          <Thumbnail src={thumbnail} alt="Video thumbnail" width="80px" height="50px"></Thumbnail>
+          <Text as="p">{description}</Text>
+      </VideoWrapper>
+    )
+  };
 
     
   VideoItem.propTypes = {
@@ -30,7 +32,7 @@ const VideoItem = ({
   VideoItem.defaultProps = {
     isActive:  false,
     thumbnail: '/assets/thumbnail.png',
-    description: ''
+    description: '',
   };
 
   export default VideoItem;

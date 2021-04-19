@@ -1,28 +1,32 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import VideoItem from '../VideoItem/VideoItem';
-import Link from 'next/link';
-import Text from '../Text/Text'
+import useFirestore from '../../hooks/useFirestore';
+
 
 import {
     ListWrapper,
+    ListTitle,
     List
   } from './Styled';
 
 
-const VideoList = ({
-    data
-}) => (
+const VideoList = ({ setSelectedVideo }) => {
 
-    <ListWrapper>
-        <List>
-            {data.map(({ name, id }) => (
-             <li key={id}>
-                 <VideoItem description={`${name}`} id={`${id}`}></VideoItem>
-                </li>
-            ))}
-        </List>
-    </ListWrapper>
-);
+    const { docs } = useFirestore('videos');
+    console.log(docs);
+
+    return (
+        <ListWrapper>
+            <ListTitle as="h2">Your videos list</ListTitle>
+            <List>
+                {docs && docs.map(doc => (
+                    <li key={doc.id} onClick={() => setSelectedVideo(doc.url)}>
+                        <VideoItem description={doc.name}></VideoItem>
+                    </li>
+                ))}
+            </List>
+        </ListWrapper>
+    )
+};
 
 export default VideoList;

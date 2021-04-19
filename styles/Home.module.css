@@ -1,6 +1,6 @@
 .main {
   background: #000;
-  min-height: 100vh;
+  min-height: calc(100vh - 83px);
 }
 
 .main__inner {
@@ -17,5 +17,6 @@
 
   .main__col {
     padding: 0 16px;
+    width: 48%;
   }
 }

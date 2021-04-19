@@ -19,8 +19,14 @@ export const FormWrapper = styled.div`
 export const FormTitle= styled(Text)`
     color: #000;
     font-size: 12px;
-    margin: 0;
+    margin: 8px 0;
     text-transform: uppercase;
+`;
+
+export const FormDescription= styled(Text)`
+    color: #000;
+    font-size: 12px;
+    margin: 0;
 `;
 
 export const FileWrapper = styled.div`
@@ -51,7 +57,6 @@ export const FileWrapper = styled.div`
             align-items: center;
             background: #fff;
             border: 2px solid #9013FE;
-            border-radius: 12px;
             color: #9013FE;
             cursor: pointer;
             display: flex;
@@ -69,48 +74,11 @@ export const FileName= styled.p`
     color: #999;
     font-size: 12px;
     font-style: italic;
-    margin: 0 4px;
-`;
-
-
-export const FileDescription = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-
-    @media (min-width: 768px) {
-        flex-direction: row;
-    }
-
-    .file__description {
-        background: #FAFAFA;
-        border: 1px solid #CFCFCF; 
-        margin: 8px auto;
-        padding: 4px 8px;
-        width: 80%;
-
-        @media (min-width: 768px) {
-            margin: 8px 0;
-        }
-
-        &:focus {
-            outline: none;
-            border: 2px solid #9013FE;
-        }
-    }
-
-    button {
-        margin: 8px auto;
-        max-width: 152px;
-
-        @media (min-width: 768px) {
-            margin: 8px 16px;
-        }
-    }
+    margin: 0 8px;
 `;
 
 export const Message = styled.p`
-    color: #ccc;
+    color: #ff0033;
     font-size: 12px;
     font-style: italic;
     margin: 0;
