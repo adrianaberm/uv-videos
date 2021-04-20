@@ -13,6 +13,24 @@ export const VideoWrapper = styled.div`
         margin-left: 16px;
         text-transform: uppercase;
     }
+
+    .video__thumbnail {
+        background: #000;
+        video {
+            display: block;
+            pointer-events: none;
+            border-radius: 0;
+            opacity: 0.5;
+
+            + div {
+                display: none;
+            }
+        }
+
+        h4, span {
+            display: none;
+        }
+    }
 `;
 
 export const Thumbnail = styled(Image)`

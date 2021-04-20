@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import Button from '../Button/Button';
+import React, { useState } from 'react';;
 import ProgressBar from '../ProgressBar/ProgressBar';
 
 import {
@@ -34,7 +33,7 @@ const UploadForm = ({formTitle}) => {
       return (
         <FormWrapper>
             <FormTitle as="h2">{formTitle}</FormTitle>
-            <FormDescription as="p">To upload your videos, choose a video file from your gallery and press "Upload Video".</FormDescription>
+            <FormDescription as="p">To upload your videos, choose a video file from your gallery by clicking in "Choose File".</FormDescription>
             <FileWrapper>
                 <input 
                     aria-label="File browser" 
