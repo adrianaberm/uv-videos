@@ -19,13 +19,13 @@ const UploadForm = ({formTitle}) => {
     
         if (file) {
           const fileType = file["type"];
-          const validVideoTypes = ["video/mp4"];
+          const validVideoTypes = ["video/mp4", "video/webm", "video/ogg"];
           if (validVideoTypes.includes(fileType)) {
             setFile(file);
             setError('');
           } else {
             setFile(null);
-            setError("Error please upload a valid MP4 video file");
+            setError("Error, please upload a valid video file (MP4, WEBM, OGG)");
           }
         }
       };
