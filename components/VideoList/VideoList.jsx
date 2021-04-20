@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import VideoItem from '../core/VideoItem/VideoItem';
 import useFirestore from '../hooks/useFirestore';
 
@@ -13,7 +12,6 @@ import {
 const VideoList = ({ setSelectedVideo }) => {
 
     const { docs } = useFirestore('videos');
-    console.log(docs);
 
     return (
         <ListWrapper>
@@ -21,7 +19,12 @@ const VideoList = ({ setSelectedVideo }) => {
             <List>
                 {docs && docs.map(doc => (
                     <li key={doc.id} onClick={() => setSelectedVideo(doc.url)}>
-                        <VideoItem description={doc.name}></VideoItem>
+                        <VideoItem 
+                            description={doc.name}
+                            preview={doc.url}
+                            videoUrl={doc.url}
+                            videoName={doc.name}>
+                        </VideoItem>
                     </li>
                 ))}
             </List>
